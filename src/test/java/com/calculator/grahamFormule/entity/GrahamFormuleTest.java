@@ -43,4 +43,10 @@ class GrahamFormuleTest {
         grahamFormule = new GrahamFormule(5.0, 5.0);
         assertEquals(grahamFormule.calculate(), 23.72);
     }
+
+    @Test
+    public void should_return_28_06_when_vpa_is_seven_and_lpa_is_five(){
+        grahamFormule = new GrahamFormule(7.0, 5.0);
+        assertEquals(grahamFormule.calculate(), 28.06);
+    }
 }

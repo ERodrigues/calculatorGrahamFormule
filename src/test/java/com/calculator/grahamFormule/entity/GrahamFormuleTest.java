@@ -49,4 +49,18 @@ class GrahamFormuleTest {
         grahamFormule = new GrahamFormule(7.0, 5.0);
         assertEquals(grahamFormule.calculate(), 28.06);
     }
+
+    @Test
+    public void should_return_exception_when_vpa_is_negative(){
+        Exception ex = assertThrows(IllegalArgumentException.class,
+                ()-> grahamFormule = new GrahamFormule(-1.0, 0.0));
+        assertEquals("Not support negative vpa attribute", ex.getMessage());
+    }
+
+    @Test
+    public void should_return_exception_when_lpa_is_negative(){
+        Exception ex = assertThrows(IllegalArgumentException.class,
+                ()-> grahamFormule = new GrahamFormule(1.0, -1.0));
+        assertEquals("Not support negative lpa attribute", ex.getMessage());
+    }
 }

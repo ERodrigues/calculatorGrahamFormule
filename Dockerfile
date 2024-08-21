@@ -1,5 +1,4 @@
 FROM maven
-FROM eclipse-temurin
 
 LABEL maintener="Eder Rodrigues <ederpr@gmail.com>"
 LABEL version="1.0.0"
@@ -11,4 +10,4 @@ RUN mvn package
 
 EXPOSE 8080
 
-CMD [java -jar target/grahamFormule-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod]
+CMD ["java", "-jar", "target/grahamFormule-0.0.1-SNAPSHOT.jar", "--spring.profiles.active=prod"]
